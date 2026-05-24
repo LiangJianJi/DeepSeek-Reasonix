@@ -796,6 +796,7 @@ function AppInner({
     pushHistory,
     resetCursor,
     history: promptHistory,
+    isHistoryMode,
   } = useInputRecall(setInput);
   const { setRawMode, isRawModeSupported } = useStdin();
   // Ctrl+X —hand the composer buffer to $EDITOR. Raw-mode flip lets the
@@ -4600,6 +4601,7 @@ function AppInner({
                   onHistoryNext={handleHistoryNext}
                   onOpenExternalEditor={handleOpenExternalEditor}
                   onCursorChange={setComposerCursor}
+                  isHistoryMode={isHistoryMode}
                   slashMatches={slashMatches}
                   slashSelected={slashSelected}
                   slashGroupMode={slashGroupMode}
